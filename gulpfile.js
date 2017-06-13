@@ -8,9 +8,9 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
 
-
 var env,
     coffeeSources,
+    jsSources,
     sassSources,
     htmlSources,
     jsonSources,
@@ -19,13 +19,14 @@ var env,
 
 env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
+if (env==='development') {
   outputDir = 'builds/development/';
   sassStyle = 'expanded';
-} else  {
+} else {
   outputDir = 'builds/production/';
   sassStyle = 'compressed';
 }
+
 
 coffeeSources = ['components/coffee/tagline.coffee'];
 jsSources = [
